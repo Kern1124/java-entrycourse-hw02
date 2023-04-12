@@ -6,6 +6,7 @@ Homework assignment no. 1, Simple Messaging
 **Submission deadline:** April 17, 2023
 
 ## CHANGELOG
+* 12.4.2023: Fixed small issue with offsets in integration test
 * 11.4.2023: Making previous tests more resilient 
 * 11.4.2023: Improved test coverage for offsets
 * 4.4.2023: Fixed sever implementation issue in `TestBroker`

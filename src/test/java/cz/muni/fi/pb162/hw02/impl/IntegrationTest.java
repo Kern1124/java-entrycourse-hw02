@@ -155,7 +155,7 @@ public class IntegrationTest extends TestBase {
 
         // when
         var fstConsumed = consumer.consume(2, TOPIC_HOUSE, TOPIC_PATIO);
-        var offsets = consumer.getOffsets();
+        var offsets = Map.copyOf(consumer.getOffsets());
         // then
         softly.assertThat(offsets)
                 .describedAs("Consumer offset after consuming messages from '%s' and '%s'", TOPIC_HOUSE, TOPIC_PATIO)
