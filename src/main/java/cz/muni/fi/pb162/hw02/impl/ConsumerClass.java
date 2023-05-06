@@ -12,26 +12,15 @@ import java.util.TreeMap;
 
 
 
-public class ConsumerClass implements Consumer {
+public class ConsumerClass extends ClientClass implements Consumer {
     private Map<String, Long> topicOffsets = new HashMap<>();
-    private final Broker broker;
 
     /**
      * Creates a consumer object
      * @param broker Broker to link with consumer
      */
     public ConsumerClass(Broker broker){
-        this.broker = broker;
-    }
-
-    @Override
-    public Broker getBroker() {
-        return broker;
-    }
-
-    @Override
-    public Collection<String> listTopics() {
-        return broker.listTopics();
+        super(broker);
     }
 
     @Override
@@ -73,9 +62,8 @@ public class ConsumerClass implements Consumer {
 
     @Override
     public void updateOffsets(Map<String, Long> offsets) {
-        for (String topic : offsets.keySet()){
-            topicOffsets.put(topic, offsets.get(topic));
-        }
+
+        topicOffsets.putAll(offsets);
     }
 
     @Override
