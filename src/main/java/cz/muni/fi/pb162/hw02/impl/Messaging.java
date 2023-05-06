@@ -1,7 +1,7 @@
 package cz.muni.fi.pb162.hw02.impl;
 
-import cz.muni.fi.pb162.hw02.mesaging.client.Consumer;
 import cz.muni.fi.pb162.hw02.mesaging.broker.Broker;
+import cz.muni.fi.pb162.hw02.mesaging.client.Consumer;
 import cz.muni.fi.pb162.hw02.mesaging.client.Producer;
 
 public final class Messaging {
@@ -16,7 +16,7 @@ public final class Messaging {
      * @return broker instance
      */
     public static Broker broker() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new BrokerClass();
     }
 
     /**
@@ -26,7 +26,7 @@ public final class Messaging {
      * @return client instance
      */
     public static Producer producer(Broker broker) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new ProducerClass(broker);
     }
 
     /**
@@ -36,6 +36,6 @@ public final class Messaging {
      * @return client instance
      */
     public static Consumer consumer(Broker broker) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new ConsumerClass(broker);
     }
 }
